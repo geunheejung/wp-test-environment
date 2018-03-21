@@ -11,12 +11,12 @@
 // determine PHP is running as standalone or apache module
 // if not set just assume PHP run with build-int web server.
 if (!function_exists(apache_getenv)){
-    define('WP_ENV', 'local');
+    define('WP_ENV', 'dev');
 }
 else {
     //  If no environment is set default to local
     if (apache_getenv('WP_ENV') == false) {
-        define('WP_ENV', 'local');
+        define('WP_ENV', 'dev');
     } else {
         define('WP_ENV', apache_getenv ('WP_ENV'));
     }
